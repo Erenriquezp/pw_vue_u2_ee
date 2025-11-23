@@ -1,0 +1,68 @@
+node_modules: librerias
+public: archivos de caracter publico no requieren autenticacion
+page o views: todo componente se aloja dentro de una pagina o vista, aun si tenemos 
+un solo componente, debe estar dentro de una pagina
+
+src: codigo fuente
+    assets: componentes utilitarios
+    componentes: base de vue - esquema de trabajo estructurado para trabajar 
+    secciones individuales (cabecera, menu, banners, pie, formulario) se comunican 
+    pero son independientes
+
+Archivos de inicio, elementos principales para arrancar la app
+    App.vue: componente raiz de la aplicacion
+    main.js: archivo de Configuracion que levanta la aplicacion 
+
+tests: Aplicar pruebas unitarias
+.browserslistrc: sirve para definir qué navegadores quieres soportar en el 
+    proyecto frontend.
+
+.gitignore: archivos que no se suben al repositorio remoto
+
+babel.config.js: transformar a lenguaje que entiende el navegadores
+
+jest.config.js: configuracion de las pruebas unitarias
+
+jsconfig.json: configuraciones del idea
+
+package-lock.json: se alojan las versiones de todas las dependencias instaladas
+package.json: resumen de dependencias instaladas
+
+README.md: archivo destinado para documentar temas relevantes a mi proyecto
+            vue crear un recordatorio de los comandos 
+    
+vue.config.js: cambiar configuraciones de puestos
+
+Configuracion para abrir la app desde codeespaces 
+module.exports = {
+  devServer: {
+    client: {
+      webSocketURL: {
+        protocol: "wss",
+      },
+    },
+    port: 8080,
+    host: "0.0.0.0"
+  }
+};
+
+Formas para trabajar con VUE
+Composition API
+Option API
+
+--------------------------------------------------------------------------------
+COMANDOS VUE
+vue+tab: crear elementos principales
+<template>
+  Aqui ponemos todo lo que es html
+</template>
+
+<script>
+export default { //Declaracion especifica de option api
+    Aqui programamos toda la logica relacionada con js
+}
+</script>
+
+<style>
+    Todos los estilos css
+</style>
