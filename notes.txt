@@ -48,8 +48,31 @@ module.exports = {
 
 Formas para trabajar con VUE
 Composition API
-Option API
 
+Option API: La Options API es la forma tradicional de escribir componentes en Vue.js, 
+organizando el código en un objeto con propiedades separadas como data, methods y computed
+
+Propiedades reactivas: variables que vamos a usar dentro del componente, 
+  cuando hacemos un cambio actualiza la vista reactivamente, que no neesariamente
+  va a existir una petición (dentro del script se puede modificar una propiedad 
+  reactiva sin necesidad de una petición del usuario) 
+  
+  cuando utiliamos una variable reactiva debemos utilizar this.
+
+Propiedades Computadas: son propiedades que se declaran como metodos pero no lo son,
+  se ejecutan solo cuando existe un cambio en su respuesta, caso contrario se guarda 
+  en caché, jamás puede recivir un parametro
+
+las directivas me permiten manipular el dom de manera reacitiva
+
+props: varibles a nivel de componente a las que puedo dar un valor desde compontes externos, 
+  para que esa varibale sea llenada por el padre
+
+v-bind: convierte el contenido en js
+v-if: condicional, true construye el elemento, false no construye,
+v-show: visualemente no hay diferencia con v-if, no muestra el elemento
+La diferencia principal es que v-if destruye y recrea el elemento del DOM según la condición, 
+  mientras que v-show siempre mantiene el elemento en el DOM y solo alterna su visibilidad con CSS (cambiando display: none). 
 --------------------------------------------------------------------------------
 COMANDOS VUE
 vue+tab: crear elementos principales
@@ -66,3 +89,6 @@ export default { //Declaracion especifica de option api
 <style>
     Todos los estilos css
 </style>
+
+npm install 
+npm run serve
