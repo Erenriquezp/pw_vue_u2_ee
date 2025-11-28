@@ -73,6 +73,9 @@ v-if: condicional, true construye el elemento, false no construye,
 v-show: visualemente no hay diferencia con v-if, no muestra el elemento
 La diferencia principal es que v-if destruye y recrea el elemento del DOM según la condición, 
   mientras que v-show siempre mantiene el elemento en el DOM y solo alterna su visibilidad con CSS (cambiando display: none). 
+
+v-model: Cuando queremos asociar un valor
+v-for: Permite iterar sobre arreglos y construir iterativamente elementos, sobre el elemento que se repite
 --------------------------------------------------------------------------------
 COMANDOS VUE
 vue+tab: crear elementos principales
