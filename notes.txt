@@ -63,7 +63,7 @@ Propiedades Computadas: son propiedades que se declaran como metodos pero no lo 
   se ejecutan solo cuando existe un cambio en su respuesta, caso contrario se guarda 
   en caché, jamás puede recivir un parametro
 
-las directivas me permiten manipular el dom de manera reacitiva
+Las directivas me permiten manipular el dom de manera reacitiva
 
 props: varibles a nivel de componente a las que puedo dar un valor desde compontes externos, 
   para que esa varibale sea llenada por el padre
@@ -76,21 +76,30 @@ La diferencia principal es que v-if destruye y recrea el elemento del DOM según
 
 v-model: Cuando queremos asociar un valor
 v-for: Permite iterar sobre arreglos y construir iterativamente elementos, sobre el elemento que se repite
+
+- Modificadores de contenido 
+Al poner sin parentesis se inyecta automaticamente el envento
+
+Modificadores de eventos
+Nacen justamente despues del evento (ej. v-on:keypress.enter), ya no es necesario pasar el event como parametro
+  Documentación: https://vuejs.org/guide/essentials/event-handling.html#key-modifiers
 --------------------------------------------------------------------------------
 COMANDOS VUE
 vue+tab: crear elementos principales
 <template>
-  Aqui ponemos todo lo que es html
+  Aqui ponemos todo lo que es html, directivas, {{js}} y todos los elementos de VUE
 </template>
 
 <script>
 export default { //Declaracion especifica de option api
-    Aqui programamos toda la logica relacionada con js
+    Aqui programamos toda la logica relacionada con jsy vue
 }
 </script>
 
-<style>
-    Todos los estilos css
+<style scoped> scoped: para que los estilos se apliquen solo al componente actual
+  style, estilo global
+    Todos los estilos css, no utiliamos elementos de vue
+
 </style>
 
 npm install 

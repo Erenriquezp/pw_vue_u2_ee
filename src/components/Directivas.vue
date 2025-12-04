@@ -11,6 +11,12 @@
         <button v-on:click="agregarEstudiante()">Agregar Estudiante</button>
         <h1>{{ arreglo }}</h1>
 
+        <hr />
+        <label for="id_nombre_1">Nombre</label>
+        <input v-model="nombre" type="text" id="id_nombre_1">
+        <label for="id_apellido_1">Apellido</label>
+        <input v-model="apellido" v-on:keypress.enter="agregarEstudiante1" type="text" id="id_apellido_1">
+
         <ul>
            <!--  <li v-for="estudiante in arreglo" key="estudiante.nombre">
                 {{ estudiante.nombre }} - {{ estudiante.apellido }}
@@ -62,12 +68,28 @@ export default {
             const estu = {
                 nombre: this.nombre,
                 apellido: this.apellido
-                
             };
             console.log('Se agrega estudiante');
             console.log(estu);
             this.arreglo.push(estu);
             this.limpiarformulario();
+        },
+        agregarEstudiante1(event) {
+            console.log('evento');
+            if (event.charCode !== 13) {
+                return;
+            }
+            const estu = {
+                nombre: this.nombre,
+                apellido: this.apellido
+            };
+            console.log('Presionaste enter');
+            console.log('Se agregó estudiante 1');
+            //console.log(event);
+            console.log(estu);
+            this.arreglo.push(estu);
+            this.limpiarformulario();
+            //console.log(event.target.value);
         },
         limpiarformulario() {
             this.nombre=null;
@@ -78,5 +100,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 
 </style>
