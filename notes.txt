@@ -83,6 +83,8 @@ Al poner sin parentesis se inyecta automaticamente el envento
 Modificadores de eventos
 Nacen justamente despues del evento (ej. v-on:keypress.enter), ya no es necesario pasar el event como parametro
   Documentación: https://vuejs.org/guide/essentials/event-handling.html#key-modifiers
+
+Para conectar el back con el font se conecta a travez de un concepto conocido como cliente (client)
 --------------------------------------------------------------------------------
 COMANDOS VUE
 vue+tab: crear elementos principales
