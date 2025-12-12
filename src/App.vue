@@ -18,6 +18,7 @@ export default {
     PreguntaView,
   },
 };
+
 </script>
 
 <style>
