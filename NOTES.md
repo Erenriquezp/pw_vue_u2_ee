@@ -1,6 +1,6 @@
 
 ---
-s
+
 # 📘 Guía de Vue.js – Estructura, Conceptos y Flujo de Trabajo
 
 ## 1. 🗂️ Estructura del Proyecto (El ecosistema de archivos)

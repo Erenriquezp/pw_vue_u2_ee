@@ -2,13 +2,15 @@
   <div>
     <!--<ContadorView />-->
     <!-- <DirectivasView /> -->
-    <PreguntaView />
+    <!-- <PreguntaView /> -->
+    <PokemonView />
 </div>
 </template>
 
 <script>
 import ContadorView from '../src/views/ContadorView.vue';
 import DirectivasView from './views/DirectivasView.vue';
+import PokemonView from './views/PokemonView.vue';
 import PreguntaView from './views/PreguntaView.vue';
 
 export default {
@@ -16,6 +18,7 @@ export default {
     ContadorView,
     DirectivasView,
     PreguntaView,
+    PokemonView
   },
 };
 

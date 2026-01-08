@@ -49,7 +49,7 @@ export default {
 };
 </script>
 
-<style> 
+<style scoped> 
 
 img, .oscuro {
     height: 100vh;
