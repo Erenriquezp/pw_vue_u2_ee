@@ -29,13 +29,11 @@ const obtenerVectorPokemon = async () => {
         const pokemon = await consumirAPIFacade(vectorNumerico[i]);
         vectorPokemon.push( {id: pokemon.id, name: pokemon.name, img: pokemon.sprites.front_default} );
     }
-    console.log("Vector de pokemons obtenido: ", vectorPokemon);
     return vectorPokemon;
 }
 
 export async function obtenerVectorPokemonFacade() {
     console.log("Obteniendo vector de pokemons...");
-    console.log("Vector numérico generado: ", obtenerVectorNumerico());
     return obtenerVectorPokemon();
 }
 

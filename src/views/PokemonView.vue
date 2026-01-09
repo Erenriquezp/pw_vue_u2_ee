@@ -1,13 +1,14 @@
 <template>
     <div>
-        <PokemonImagen :pokemonId="pokemonGanador" />
+        <PokemonImagen  v-if="mostrar" :pokemonId="pokemonGanador" />
         <PokemonOpciones @pokemonSeleccionado="evaluarGanador($event)" :listaPokemon="pokemonArr" />
-        <div class="message" v-if="esGanador">
+        <div class="message" v-if="juegoIniciado && esGanador">
             <h2>¡Has ganado!</h2>
         </div>
-        <div class="message" v-if="!esGanador">
+        <div class="message" v-if="juegoIniciado && !esGanador">
             <h2>¡Has perdido!</h2>
         </div>
+        <button @click="destruir">Destruir</button>
     </div>
 </template>
 
@@ -25,13 +26,14 @@ export default {
         return {
             pokemonArr: [],
             pokemonGanador: 0,
-            esGanador: false
+            esGanador: false,
+            juegoIniciado: false,
+            mostrar: true
         };
     },
     methods: {
         async iniciarJuego() {
             this.pokemonArr = await obtenerVectorPokemonFacade();
-            console.log(this.pokemonArr);
             const ganadorIndex = obtenerAleatorioFacade(0, 3);
             this.pokemonGanador = this.pokemonArr[ganadorIndex].id;
             console.log("Pokémon ganador: ", this.pokemonArr[ganadorIndex].name);
@@ -46,13 +48,35 @@ export default {
                 console.log("¡Has perdido!");
                 this.esGanador = false;
             }
-            this.iniciarJuego();
+            this.juegoIniciado = true;
+        },
+        destruir() {
+            this.mostrar = false;
         }
     },
+    /* Cuando se crea el componente */
+    beforeCreate() {
+        console.log('Before Create: Apenas inicia la instancia del componente');
+    },
+    created(){
+        console.log('Created: Ya se ha creado el data, computed, methods, etc. Pero aún no se ha montado el componente en el DOM');
+    },
+    beforeMount() {
+        console.log('Before Mount: El componente está a punto de montarse en el DOM, pero aún no se ha visualizado en pantalla');
+    },
     mounted() {
-        console.log('Mounted');
+        console.log('Mounted: El componente ya se ha montado en el DOM, cuando ya se visualizar el componente en pantalla');
         this.iniciarJuego();
-    }
+    },
+    
+    /* Cuando se actualiza el componente */
+    beforeUpdate() {
+        console.log('Before Update: El componente está a punto de actualizarse, cuadno cambia un data, props, etc. Pero aún no se ha actualizado el DOM ');
+    },
+    updated() {
+        console.log('Updated: El componente ya se ha actualizado tras el re-renderización, cuando ya se refleja el cambio en el DOM');
+    },
+    
     
 }
 </script>
