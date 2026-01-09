@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const consumirAPI = async (id) => { // no es correcto poner directamente export 
-    const respuesta = axios.get(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}`).then(response => response.data);
+    const respuesta = axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(response => response.data);
     console.log(respuesta);
     return respuesta;
 }
@@ -27,8 +27,18 @@ const obtenerVectorPokemon = async () => {
     const vectorPokemon = [];
     for (let i = 0; i < vectorNumerico.length; i++) {
         const pokemon = await consumirAPIFacade(vectorNumerico[i]);
-        vectorPokemon.push( {name: pokemon.data.name, img: pokemon.data.sprites.front_default} );
+        vectorPokemon.push( {id: pokemon.id, name: pokemon.name, img: pokemon.sprites.front_default} );
     }
+    console.log("Vector de pokemons obtenido: ", vectorPokemon);
     return vectorPokemon;
 }
 
+export async function obtenerVectorPokemonFacade() {
+    console.log("Obteniendo vector de pokemons...");
+    console.log("Vector numérico generado: ", obtenerVectorNumerico());
+    return obtenerVectorPokemon();
+}
+
+export function obtenerAleatorioFacade(min, max) {
+    return obtenerAleatorio(min, max);
+}
